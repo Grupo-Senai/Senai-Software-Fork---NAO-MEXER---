@@ -1,89 +1,236 @@
 body {
-    background-color: #e0e0e0;
-    font-family: 'Montserrat', sans-serif;
+  background-color: #e0e0e0;
+  font-family: "Montserrat", sans-serif;
 }
-
+/*
 h1 {
     color: #005ca9;
-    /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+    /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) 
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1rem;
+}*/
+
+h1 {
+  color: #005ca9;
+  /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+  font-size: 2rem;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
 
 .sair {
-    display: block;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #005ca9;
+  background-position: top;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  padding-bottom: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+}
+
+.navbar-container {
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  /* Movemos essas tags para o .navbar-container
+    display: flex;
+    align-items: center;
+    */
+  font-weight: bold;
+  text-decoration: none;
+  /* object-fit: cover;
+    /*width: 10rem;*/
+  height: 3rem;
+  width: 10rem;
+  /*border-radius: 200px;
+    margin-right: 200px;*/
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.navbar-menu li {
+  text-align: center;
+  margin-right: 4rem;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
 }
 
 form {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 2%;
-    padding-bottom: 1%;
-    max-width: 30rem;
-    margin: 0 auto;
-    margin-top: 4vh;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2%;
+  padding-bottom: 1%;
+  max-width: 30rem;
+  margin: 0 auto;
+  margin-top: 4rem;
 }
 
 label {
-    margin-bottom: 1%;
-    font-weight: bold;
-    color: #000000;
+  margin-bottom: 1%;
+  font-weight: bold;
+  color: #000000;
 }
 
 input[type="text"],
 input[type="date"],
 input[type="time"],
 input[type="number"] {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1em;
-    border: 1px solid #005ca9;
-    border-radius: 4px;
-    margin-bottom: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #005ca9;
+  border-radius: 4px;
+  margin-bottom: 1em;
 }
 
+/*
 input[type="text"]:hover,
 input[type="number"]:hover {
-    color: #005ca9;
-    border: 1px solid rgb(189, 194, 199);
+    /*border: 1px solid rgb(0, 0, 0);
 }
+*/
 
 input[type="date"]:hover,
 input[type="time"]:hover {
-    color: rgba(255, 0, 0);
+  color: #0c36be;
 }
 
-input[type="submit"] {
-    box-sizing: border-box;
-    background-color: #005ca9;
-    color: #ffffff;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: none;
-    border-radius: 1.5rem 1rem 1.5rem 1rem;
-    padding: 2% 30px;
-    cursor: pointer;
-    transition: background-color 0.1s ease;
-    display: block;
-    margin: 0 auto;
+button[type="submit"] {
+  box-sizing: border-box;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  padding: 2% 30px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 input[type="submit"]:hover {
-    background-color: #005ca9;
+  background-color: #0c36be;
 }
 
+.success-message {
+  position: static;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+}
 
+.rodape {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  /* padding-top: auto; */
+  font-weight: bold;
+  margin-top: 3%;
+  object-position: bottom;
+}
+
+.rodape p {
+  line-height: 0.4;
+}
+
+.text-container {
+  margin: 0 auto;
+  align-items:center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  /* padding-top: auto; */
+  font-weight: bold;
+}
+
+.text-container .calendario {
+  margin: 0 auto;
+  width: 100%;
+  flex-basis: 20%;
+}
+
+.text-container form {
+  flex-basis: 30%;
+}
+/*
+table {
+  width: max-content;
+}
+*/
+table {
+  display: flex;
+  text-align: center;
+}
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  background-color: #005ca7;
+  color: #fff;
+}
+
+th:first-child {
+  border-radius: 20px 0px 0px 0px;
+}
+
+th:last-child {
+  border-radius: 0px 20px 0px 0px;
+}
+
+/*.dias h5 {
+  line-height: 0.4;
+}
+*/
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
 @media screen and (max-width: 768px) {
     form {
@@ -129,3 +276,83 @@ input[type="submit"]:hover {
         /* Reduz ainda mais o espaçamento interno do botão de envio 
     }
 }*/
+
+h1 {
+  color: #005ca9;
+  /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+  font-size: 2rem;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+}
+
+.navbar-container {
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  /* Movemos essas tags para o .navbar-container
+  display: flex;
+  align-items: center;
+  */
+  font-weight: bold;
+  text-decoration: none;
+  /* object-fit: cover;
+  /*width: 10rem;*/
+  height: 3rem;
+  width: 10rem;
+  /*border-radius: 200px;
+  margin-right: 200px;*/
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.navbar-menu li {
+  text-align: center;
+  margin-right: 4rem;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
+}
+
+form {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  padding-bottom: 1%;
+  max-width: 30rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover {
+  color: #0c36be;
+  color: #0c36be;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: #0c36be;
+  text-align: center;
+}

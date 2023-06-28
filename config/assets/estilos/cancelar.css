@@ -19,6 +19,67 @@ body {
   font-weight: bold;
 }
 
+.navbar {
+  background-color: #005ca9;
+  background-position: top;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  padding-bottom: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+}
+
+.navbar-container {
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  /* Movemos essas tags para o .navbar-container
+  display: flex;
+  align-items: center;
+  */
+  font-weight: bold;
+  text-decoration: none;
+ /* object-fit: cover;
+  /*width: 10rem;*/
+  height: 3rem;
+  width: 10rem;
+  /*border-radius: 200px;
+  margin-right: 200px;*/
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.navbar-menu li {
+  text-align: center;
+  margin-right: 4rem;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
+}
+
+
+
 #app {
   max-width: 500px;
   margin: 0 auto;
@@ -59,31 +120,55 @@ input[type="text"] {
   padding: 10px;
   border-radius: 4px;
   font-size: 18px;
-  font-weight: 600;
   transition: color 0.1s ease;
   box-sizing: border-box;
 }
 
-input[value="CANCELAR"],
-button {
+button[type="submit"]{
+  margin-top: 1rem;
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 10px 5px 10px 5px;
+  border-radius: 20px 10px 20px 10px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+button[type="button"] {
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 20px 10px 20px 10px;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
   margin: 0 auto;
   display: block;
 }
+select {
+  border: 1px solid #005ca9;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: color 0.1s ease;
+}
+
 
 input[type="text"],
 input[type="checkbox"] {
   border: 1px solid #005ca9;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -101,8 +186,7 @@ button {
 
 input[type="submit"]:hover,
 button:hover {
-  color: #ffffff;
-  background-color: #c2bcbc;
+  background-color: #0c36be;
 }
 /* Responsividade */
 

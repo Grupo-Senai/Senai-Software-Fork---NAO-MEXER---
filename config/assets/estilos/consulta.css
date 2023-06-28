@@ -1,5 +1,4 @@
 body {
-  overflow: hidden;
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -20,6 +19,65 @@ body {
   font-weight: 900;
 }
 
+.navbar {
+  background-color: #005ca9;
+  background-position: top;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  padding-bottom: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+}
+
+.navbar-container {
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.logo {
+  /* Movemos essas tags para o .navbar-container
+  display: flex;
+  align-items: center;
+  */
+  font-weight: bold;
+  text-decoration: none;
+ /* object-fit: cover;
+  /*width: 10rem;*/
+  height: 3rem;
+  width: 10rem;
+  /*border-radius: 200px;
+  margin-right: 200px;*/
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.navbar-menu li {
+  text-align: center;
+  margin-right: 4rem;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
+}
+
 #app {
   max-width: 1000px;
   margin: 0 auto;
@@ -33,7 +91,7 @@ table {
   max-width: 800px;
   margin: 20px auto;
   white-space: nowrap;
-  overflow-x: auto;
+  font-weight: 600;
 }
 
 h1 {
@@ -100,6 +158,6 @@ footer {
   font-weight: bold;
 }
 .rodape {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
 }

@@ -1,0 +1,111 @@
+body {
+    background-color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#app {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 2%;
+    margin-top: 1vh;
+}
+
+.sair {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    grid-column: 1;
+    margin-bottom: 1%;
+    font-weight: bold;
+    color: #000000;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #005CA9;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#senhaErro {
+    display: none;
+    float: left;
+    justify-content: flex-start;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: -0.2rem;
+}
+
+form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2%;
+    background-color: #ffffff;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    grid-column: 1;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #005CA9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+    background-color: #005CA9;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 20px 10px 20px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+button[value="redefinir"] {
+    background-color: #005CA9;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 20px 10px 20px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}

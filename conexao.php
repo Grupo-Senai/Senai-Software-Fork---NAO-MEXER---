@@ -1,9 +1,19 @@
 <?php
-session_start();
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-  // Usuário não está autenticado, redirecionar para a página de login
-  header('Location: Login.php');
+/* 
+! IMPORTANTE !
+! IMPORTANTE !
+
+SE NAO ESTOU ENGANDO, PODE HAVER A POSSIBILIDADE DE EXCLUSÃO DESTE ARQUIVO (conexao.php) POIS O MESMO JÁ NÃO CUMPRE MAIS A FUNÇÃO DESIGNADA, MAS POR ENQUANTO VAMOS MANTÊ-LO
+
+! IMPORTANTE !
+! IMPORTANTE !
+*/
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
+  // Redirecionar para a página de login 
+  header("Location: login.html");
   exit;
 }
 ?>
@@ -11,8 +21,9 @@ if (!isset($_SESSION['usuario'])) {
 <html>
 
 <head>
+  <!-- meta tags -->
   <meta charset="UTF-8">
-  <title>Software</title>
+  <!-- link tags -->
   <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($superusuario && password_verify($senha, $superusuario['senha'])) {
     // É um superusuário/administrador, redirecionar para a página de administração
-    header('Location: Agendamentos.php');
+    header('Location: agendamentos.php');
     exit;
   }
 
@@ -55,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($usuario && password_verify($senha, $usuario['senha'])) {
     // É um usuário comum, redirecionar para a página principal
-    header('Location: Agendamentos.php');
+    header('Location: agendamentos.php');
     exit;
   } else {
     // Login inválido, exibir mensagem de erro
@@ -79,20 +90,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $id = $_POST['id'];
       $motivo = $_POST['motivo'];
 
-      // Insere os dados na tabela "agendamentos"
+      // Insere os dados na tabela "cancelamentos"
       $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
       $stmt->bindValue(':id', $id);
       $stmt->bindValue(':nome', $nome);
       $stmt->bindValue(':motivo', $motivo);
       $stmt->execute();
-      //echo "<p>Agendamento realizado com sucesso!</p>";
+      //echo "<p>Cancelamento realizado com sucesso!</p>";
     }
   } catch (PDOException $e) { // Exibir uma mensagem de erro
     echo "Erro de conexão: " . $e->getMessage();
   }
   ?>
   <p>Agendamento realizado com sucesso!</p>
-
+  <script src="./config/assets/js/destruirSessao.js"></script>
 </body>
 
 </html>
