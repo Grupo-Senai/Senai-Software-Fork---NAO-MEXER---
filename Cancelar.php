@@ -233,7 +233,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             // Manipule o evento de clique do botão
             menuBtn.addEventListener('click', function() {
                 // Adicione a classe "rounded" ao elemento navbar
-                navbar.classList.removse('rounded');
+                navbar.classList.remove('rounded');
             });
         </script>
         <script src="./config/assets/js/destruirSessao.js"></script>
